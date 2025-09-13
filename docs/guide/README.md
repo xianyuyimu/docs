@@ -40,6 +40,7 @@ A file list program that supports multiple storage, and supports web browsing an
 - [x] [UPYUN Storage Service](https://www.upyun.com/products/file-storage)
 - [x] WebDAV
 - [x] Teambition（[China](https://www.teambition.com/)，[International](https://us.teambition.com/)）
+- [x] [MediaFire](../guide/drivers/mediafire.md)
 - [x] [mediatrack](https://www.mediatrack.cn/)
 - [x] [189cloud](https://cloud.189.cn) (Personal, Family)
 - [x] [139yun](https://yun.139.com/) (Personal, Family)
