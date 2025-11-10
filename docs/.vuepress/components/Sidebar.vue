@@ -2,17 +2,17 @@
   <Sidebar>
     <template #top>
       <div class="ss">
-        <div class="sidebar-ad-placeholder">
-          <a href="https://doc.hutool.cn/" target="_blank" @click="handleAdClick">
+        <div class="sidebar-ad-placeholder" style="margin-top: 25px;">
+          <a href="https://e.tb.cn/h.SIXPWhPqkQZSEGW?tk=LGSzfiLOCB1" target="_blank" @click="handleAdClick('alist-115')">
+            <img :src="adImage" alt="Hutool" style="max-width: 80%; height: auto; margin-left: 20px;" />
+          </a>
+        </div>
+        <div class="sidebar-ad-placeholder" >
+          <a href="https://doc.hutool.cn/" target="_blank" @click="handleAdClick('alist-hutool')">
             <img src="/img/ss/hutool.pic.jpg" alt="Hutool" style="max-width: 80%; height: auto; margin-left: 20px;" />
           </a>
         </div>
-        <!-- <div class="sidebar-ad-placeholder">
-          广告 2
-        </div>
-        <div class="sidebar-ad-placeholder">
-          广告 3
-        </div> -->
+         
         <div class="mingdao" v-if="showMingdao">
           <a href="https://www.mingdao.com?s=utm_51=utm_source=alist&utm_medium=banner&utm_campaign=%E5%93%81%E7%89%8C%E6%8E%A8%E5%B9%BF&utm_content=IT%E8%B5%8B%E8%83%BD%E4%B8%9A%E5%8A%A1"
             target="_blank"><img src="/img/ss/mingdao.png" alt="" /></a>
@@ -44,7 +44,13 @@ const isDrivers = computed(() => {
 
 const showMingdao = false;
 
-const handleAdClick = async () => {
+const isChinese = computed(() => {
+  return pageData.value.path.startsWith("/zh/")
+})
+const adImage = computed(() => isChinese.value ? '/img/ss/115-cn.jpg' : '/img/ss/115-en.jpg')
+
+
+const handleAdClick = async (name: string) => {
   try {
     await fetch('https://api.hutool.cn/blade-adv/stats', {
       method: 'POST',
@@ -52,7 +58,7 @@ const handleAdClick = async () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name: "alist-hutool"
+        name: name
       })
     });
   } catch (error) {
@@ -66,8 +72,7 @@ const handleAdClick = async () => {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  margin: 35px 0 16px 0;
-  border-radius: 5px;
+  margin: -12px 0 16px 0;
 }
 
 .mingdao {
