@@ -2,12 +2,12 @@
   <Sidebar>
     <template #top>
       <div class="ss">
-        <div class="sidebar-ad-placeholder" style="margin-top: 25px;">
+        <!-- <div class="sidebar-ad-placeholder" >
           <a href="https://e.tb.cn/h.SIXPWhPqkQZSEGW?tk=LGSzfiLOCB1" target="_blank" @click="handleAdClick('alist-115')">
             <img :src="adImage" alt="Hutool" style="max-width: 80%; height: auto; margin-left: 20px;" />
           </a>
-        </div>
-        <div class="sidebar-ad-placeholder" >
+        </div> -->
+        <div class="sidebar-ad-placeholder" style="margin-top: 25px;">
           <a href="https://doc.hutool.cn/" target="_blank" @click="handleAdClick('alist-hutool')">
             <img src="/img/ss/hutool.pic.jpg" alt="Hutool" style="max-width: 80%; height: auto; margin-left: 20px;" />
           </a>
